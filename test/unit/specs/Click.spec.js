@@ -15,8 +15,8 @@ describe('click.vue', () => {
     buttonElm.click();
 
     setTimeout(_ => {
-      expect(vm.ResultNum).to.equal(11);
-      expect(vm.$el.querySelector('.click-num').textContent).to.equal('点击了5次');
+      expect(vm.ResultNum).to.equal(41);
+      expect(vm.$el.querySelector('.click-num').textContent).to.equal('点击了3次');
       done();
     }, 100);
   });

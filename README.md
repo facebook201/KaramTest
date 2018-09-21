@@ -278,6 +278,24 @@ describe('click.vue', () => {
 
 
 
+### 补充
+
+vue-cli 默认的测试工具 没有按照 karma-chrome-launcher。所有并不是流量测试。 运行命令也是 run test。然后我安装了 karma-chome-launcher 插件。改一点 karma.conf.js的配置
+
+```javascript
+// karma.conf.js
+browsers: ['Chrome'],
+    
+// 启动命令 // 下面的命令就可以在浏览器里面看到
+karma start test/unit/karma.conf.js
+
+
+// npm run unit 对应的命令是 --single-run 运行一次
+cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run
+```
+
+
+
 #### 总结
 
 * utils.js 方法包含了大多数Vue组件测试的笔记

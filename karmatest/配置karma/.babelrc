@@ -1,0 +1,8 @@
+{
+  "env": {
+    "test": {
+      "presets": ["env", "babel-preset-power-assert"],
+      "plugins": ["istanbul"]
+    }
+  }
+}

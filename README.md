@@ -43,7 +43,7 @@ module.exports = function karmaConfig (config) {
     files: ['./index.js'],
     // 预处理器
     preprocessors: {
-      './index.js': ['webpack', 'sourcemap']
+      './index.js': ['webpack', 'source 22map']
     },
     // webpack 配置
     webpack: webpackConfig,

@@ -84,6 +84,39 @@ describe('HelloWorld.vue', () => {
       .to.equal('Welcome to Your Vue.js App')
   })
 })
+
+// methods
+it('给setMessage方法设置参数', () => {
+    vm.setName('张三')
+    expect(vm.name).to.equal('张三')
+  })
+
+// filters
+
+it('filter 测试', () => {
+    const upperText = HelloWorld.filters.upperCase('lisi')
+    expect(upperText).to.equal('LISI')
+  })
+  
+// props
+it('测试data数据', () => {
+    const Cotr = Vue.extend(Test)
+    const propData = { msginfo: 'hello' }
+    const vm = new Cotr({ propsData: propData }).$mount()
+
+    expect(vm.$el.textContent).to.equal('hello')
+  })
+  
+// 异步更新
+it('异步更新', done => {
+    const vm = new Cotr().$mount()
+    vm.msg = 'hello vue'
+    Vue.nextTick(_ => {
+      expect(vm.$el.textContent).to.equal('hello vue')
+    })
+    done()
+  })
+
 ```
 
 
